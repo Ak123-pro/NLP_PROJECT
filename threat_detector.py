@@ -18,7 +18,8 @@ class PrivacyPreservingThreatDetector:
         }
 
     def preprocess_text(self, text):
-        text = text.lower()
+        # text = text.lower()
+        text = str(text).lower()
         text = re.sub(r'[^a-zA-Z\s]', '', text)
         words = text.split()
         words = [self.stemmer.stem(w) for w in words if w not in self.stop_words]
